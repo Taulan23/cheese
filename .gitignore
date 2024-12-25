@@ -1,0 +1,20 @@
+# Конфигурационные файлы
+config.php
+
+# Временные файлы
+*.log
+*.tmp
+
+# Папки
+/vendor/
+/node_modules/
+/.idea/
+/.vscode/
+
+# Файлы окружения
+.env
+.env.local
+
+# Файлы системы
+.DS_Store
+Thumbs.db 

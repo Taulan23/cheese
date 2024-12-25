@@ -1,0 +1,449 @@
+/* Общие стили для всех страниц */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #ffcc00;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    padding: 10px;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #000;
+}
+
+
+/* Основные стили для контента */
+main {
+    padding: 20px;
+}
+
+.intro {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.intro h1 {
+    color: #ff9900;
+    font-size: 36px;
+}
+
+.intro img {
+    max-width: 300px;
+    margin-top: 20px;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+.intro p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Всплывающая подсказка */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.tooltip::after {
+    content: "Подсказка: лучшие сыры Европы!";
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    top: -30px;
+    left: 0;
+    display: none;
+    z-index: 10;
+}
+
+.tooltip:hover::after {
+    display: block;
+}
+
+/* Таймер и часы */
+#countdown, #clock {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff0000;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Форма подписки */
+.form-section {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2 {
+    font-size: 28px;
+    color: #ff9900;
+    text-align: center;
+}
+
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-section form label {
+    font-size: 16px;
+    color: #666;
+}
+
+.form-section form input {
+    padding: 8px;
+    width: 300px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-section form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-section form button:hover {
+    background-color: #ff9900;
+}
+
+#form-message {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* Футер */
+footer {
+    background-color: #ffcc00;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#clock {
+    font-size: 20px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Стили для навбара */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    position: relative; /* Важно для выпадающего меню */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: block;
+}
+
+nav ul li a:hover {
+    color: #000;
+}
+
+/* Стили для выпадающего меню */
+nav ul li ul.submenu {
+    display: none; /* Скрываем подменю по умолчанию */
+    position: absolute;
+    top: 100%; /* Подменю появляется сразу под родительским элементом */
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 100; /* Обеспечиваем отображение поверх других элементов */
+}
+
+nav ul li ul.submenu li {
+    padding: 5px 0;
+}
+
+nav ul li ul.submenu li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+nav ul li ul.submenu li a:hover {
+    color: #000;
+}
+
+/* Показываем подменю при наведении на родительский элемент */
+nav ul li:hover ul.submenu {
+    display: block; /* Показываем подменю при наведении */
+}
+
+/* В конец файла добавим медиа-запросы */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .form-section form input {
+        width: 100%;
+    }
+    
+    .intro h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo img {
+        margin-bottom: 15px;
+    }
+}
+
+/* Добавляем новые стили для форм авторизации */
+.auth-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 10px;
+    background: #ffcc00;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.auth-form button:hover {
+    background: #ff9900;
+}
+
+.error {
+    color: red;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Стили для админ-панели */
+.admin-panel {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+}
+
+.contact-form button {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #45a049;
+}
+
+.success {
+    background: #dff0d8;
+    color: #3c763d;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.messages-list {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.message-item {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.message-meta {
+    color: #666;
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.message-text {
+    white-space: pre-line;
+    margin-top: 10px;
+}
+
+/* Добавьте эти стили */
+.btn-message {
+    background: #4CAF50;
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.btn-message:hover {
+    background: #45a049;
+    color: white !important;
+}
+
+/* Стили для формы сообщений */
+.message-form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.message-form-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.message-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message-form input,
+.message-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.message-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.message-form button {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.message-form button:hover {
+    background: #45a049;
+}
